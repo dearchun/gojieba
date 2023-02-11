@@ -80,6 +80,10 @@ char** Tag(Jieba x, const char* sentence) {
   return ConvertWords(words);
 }
 
+int IsStopWord(Jieba x, const char *word) {
+  return ((cppjieba::Jieba*)x)->extractor.IsStopWord(word);
+}
+
 void AddWord(Jieba x, const char* word) {
   ((cppjieba::Jieba*)x)->InsertUserWord(word);
 }
