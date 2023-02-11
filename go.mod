@@ -1,3 +1,3 @@
-module github.com/yanyiwu/gojieba
+module github.com/dearchun/gojieba
 
-go 1.13
+go 1.19
