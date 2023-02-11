@@ -97,6 +97,12 @@ func (x *Jieba) Tag(s string) []string {
 	return res
 }
 
+func (x *Jieba) IsStopWord(s string) bool {
+	cstr := C.CString(s)
+	defer C.free(unsafe.Pointer(cstr))
+	return C.IsStopWord(x.jieba, cstr) != C.int(0)
+}
+
 func (x *Jieba) AddWord(s string) {
 	cstr := C.CString(s)
 	defer C.free(unsafe.Pointer(cstr))
